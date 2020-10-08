@@ -103,7 +103,8 @@ Reyna's feedback is missing! Use what you know to do the following:
 */
 
 reviews[7].feedback="this place is chill with really cool people, great for getting work done on weekdays";
-console.log(Object.entries(reviews));
+console.log(reviews);
+
 
 
 
@@ -117,8 +118,8 @@ Use the getReviewByIndex function below to do the following:
 */
 
 
-function getReviewByIndex(/*Your code here*/) {
-  /*Your code here*/
+function getReviewByIndex(arr, index) {
+  return `${arr[index].name} gave the restaurant a ${arr[index].rating} star review, and their feedback was: ${arr[index].feedback}`;
 }
 
 
@@ -135,7 +136,7 @@ Use the getLastReview function below to do the following:
 */
 
 
-function getLastReview(/*Your code here*/) {
+function getLastReview(arr) {
   /*Your code here*/
 } 
 
