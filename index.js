@@ -14,7 +14,7 @@ The function should:
 */
 
 function createMenuItem(name, price, category){
-    newObject={name: name, price: price, category: category,};
+    let newObject={name: name, price: price, category: category,};
     return newObject;
 }
 
@@ -26,8 +26,10 @@ Test your createMenuItems function by doing the following:
   
   For example: createMenuItem("pizza",5,"lunch") would return this as the object: {name:"Pizza",price:5,category:"lunch"}
 */
-
-
+createMenuItem.menuItem1=createMenuItem("pizza", 5, "food");
+createMenuItem.menuItem2=createMenuItem("hamburger", 5, "food");
+createMenuItem.menuItem3=createMenuItem("eggs", 5, "food");
+Object.entries(createMenuItem);
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 You're having a lunch special! 25% off for teachers and students, 10% off for everyone else. Add a method to the 
@@ -46,7 +48,15 @@ export const burger = {
   name: "Burger", 
   price: 18, 
   category: "Lunch", 
-  /*Your code here*/
+  calcPrice: function(discountMethod){
+    const tsPrice=this.price*.25;
+    const pPrice=this.price*.10;
+    if (discountMethod==="teacher"||"student"){
+      return this.price-tsPrice;
+    } else if (discountMethod==="public"){
+      return this.price-pPrice;
+    }
+  },
 }
 
 
@@ -67,7 +77,7 @@ const reviews = [
 Using the reviews array above:
   1. log only Julius' feedback to the console
 */
-
+console.log(reviews[5].feedback);
 
 
 
@@ -76,6 +86,10 @@ Using the reviews array above do the following:
   1. Following the same format (name, rating, feedback), add a new fictitious review object to the reviews array
   2. log the whole array to the console, make sure the new review is inside of it   
 */
+reviews.name="Faker";
+reviews.rating=4;
+reviews.feedback="fake feedback";
+console.log(Object.entries(reviews));
 
 
 
