@@ -48,17 +48,18 @@ export const burger = {
   name: "Burger", 
   price: 18, 
   category: "Lunch", 
-  calcPrice: function(discountMethod){
-    const tsPrice=this.price*.25;
-    const pPrice=this.price*.10;
-    if (discountMethod==="teacher"||"student"){
+  discount: function(personType){
+    let tsPrice=this.price*.25;
+    let pPrice=this.price*.10;
+    if (personType==="teacher"||personType==="student"){
       return this.price-tsPrice;
-    } else if (discountMethod==="public"){
+    } else if (discount==="public"){
       return this.price-pPrice;
     }
   },
-}
+};
 
+console.log(burger.discount("teacher"));
 
 
 ///////////////Reviews (MVP)///////////////////
@@ -138,7 +139,7 @@ Use the getLastReview function below to do the following:
 
 function getLastReview(arr) {
   let index=reviews.length-2;
-  console.log(`${arr[index]["name"]} gave the restaurant a ${arr[index]["rating"]} star review and, their feedback was: ${arr[index]["feedback"]}`);
+  retrun `${arr[index]["name"]} gave the restaurant a ${arr[index]["rating"]} star review and, their feedback was: ${arr[index]["feedback"]}`;
   }
 
 
@@ -213,8 +214,11 @@ Use the carMaker function below to do the following:
 */
 
 
-function carMaker(/* code here */) {
-    /* code here */
+function carMaker(milesDriven) {
+    let carList=[{model: "chrysler", totalMiles: milesDriven, color: "green"},
+                 {model: "chevorlet", totalMiles: milesDriven, color: "yellow"},
+                 {model: "ford", totalMiles: milesDriven, color:"black"},
+  ]
     
 }
 
