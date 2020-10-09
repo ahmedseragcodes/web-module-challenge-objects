@@ -137,8 +137,9 @@ Use the getLastReview function below to do the following:
 
 
 function getLastReview(arr) {
-  /*Your code here*/
-} 
+  let index=reviews.length-2;
+  console.log(`${arr[index]["name"]} gave the restaurant a ${arr[index]["rating"]} star review and, their feedback was: ${arr[index]["feedback"]}`);
+  }
 
 
 
@@ -158,9 +159,15 @@ Use the getReviewsByRating function below to do the following:
   ]
 */
 
- function getReviewByRating(/* code here */) {
-    /* code here */
+ function getReviewByRating(arr, ratingRange) {
+    let desiredRatings=[];
+    for (let i=0; i<arr.length; i++){
+    if (arr[i].rating===ratingRange){
+      desiredRatings.push(arr[i]);
+    }
   }
+  return desiredRatings;
+}
 
   
 /* 💪💪💪💪💪💪💪💪💪💪 STRETCH 2: 💪💪💪💪💪💪💪💪💪💪   
@@ -176,8 +183,15 @@ Use the getLongReviews function below to do the following:
   ]
 */
 
-function getLongReviews(/* code here */) {
-    /* code here */
+function getLongReviews(arr) {
+  let longReviews=[];
+  for (let i=0; i<arr.length; i++){
+  itemLength=arr[i].feedback.length;
+  if (itemLength>=15){
+    longReviews.push(arr[i]);
+  }
+  }
+  return longReviews;
   }
   
 
