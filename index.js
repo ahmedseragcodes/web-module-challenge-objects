@@ -214,13 +214,14 @@ Use the carMaker function below to do the following:
 */
 
 
-function carMaker(milesDriven) {
-    let carList=[{model: "chrysler", totalMiles: milesDriven, color: "green"},
-                 {model: "chevorlet", totalMiles: milesDriven, color: "yellow"},
-                 {model: "ford", totalMiles: milesDriven, color:"black"},
-  ]
-    
-}
+function carMaker(odometer) {  
+  let car1= {speed: odometer,
+             drive: function(distance){
+             return this.speed=this.speed+distance;
+             }
+  };
+  return car1;
+  }
 
 
 /* 🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑 */
